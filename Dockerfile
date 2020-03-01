@@ -5,3 +5,5 @@ RUN pip install nltk
 RUN python -m nltk.downloader stopwords
 RUN python -m nltk.downloader wordnet
 RUN python -m nltk.downloader punkt
+USER root
+RUN apt-get update && apt-get install -y jq
