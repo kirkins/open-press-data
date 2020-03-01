@@ -7,7 +7,7 @@ do
     let i++
     echo {$col1}?page={$i}
     resp=$(curl {$col1}?page={$i})
-    echo ${#resp}
+    echo Size: ${#resp}
     if [ ${#resp} -ge 5 ]; then
       echo $resp \
       | jq -r '.[] | [
