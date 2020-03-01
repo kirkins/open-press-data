@@ -1,3 +1,5 @@
+#!/bin/sh
+
 while IFS=, read -r col1 col2
 do
   let i=0
