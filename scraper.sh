@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 while IFS=, read -r col1 col2
 do
@@ -18,8 +18,8 @@ do
               .metadata.name,
               .metadata.inLanguage,
               .metadata.image,
-              .metadata.author[0]."@type",
-              .metadata.author[0].name,
+              ( [ .metadata.author[]."@type" ] | join(";") ),
+              ( [ .metadata.author[].name    ] | join(";") ),
               .metadata.license."@type",
               .metadata.license.url,
               .metadata.license.name
